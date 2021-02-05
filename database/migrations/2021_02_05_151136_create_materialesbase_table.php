@@ -14,7 +14,7 @@ class CreateMaterialesbaseTable extends Migration
     public function up()
     {
         Schema::create('materialesbase', function (Blueprint $table) {
-            $table->char('id', 3)->comment('ID');
+            $table->id()->commet('id');
             $table->string('nombre', 45)->comment('Nombre');
             $table->decimal('precio', 45)->comment('Precio');
             $table->timestamps();

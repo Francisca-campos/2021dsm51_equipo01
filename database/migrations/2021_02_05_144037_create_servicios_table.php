@@ -14,7 +14,7 @@ class CreateServiciosTable extends Migration
     public function up()
     {
         Schema::create('servicios', function (Blueprint $table) {
-            $table->char('id', 3)->comment('ID');
+            $table->id()->commet('id');
             $table->integer('cantidad', 45)->comment('Cantidad');
             $table->timestamps();
         });

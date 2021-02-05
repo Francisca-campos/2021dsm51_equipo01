@@ -14,7 +14,7 @@ class CreateCarritosTable extends Migration
     public function up()
     {
         Schema::create('carritos', function (Blueprint $table) {
-            $table->char('id', 3)->comment('ID');
+            $table->id()->commet('id');
             $table->integer('cantidad', 45)->comment('Cantidad');
             $table->decimal('total', 50)->comment('Total');
             $table->string('metodo_pago', 50)->comment('Metodo_pago');

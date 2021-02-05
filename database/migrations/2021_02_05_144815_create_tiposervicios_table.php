@@ -14,7 +14,7 @@ class CreateTiposerviciosTable extends Migration
     public function up()
     {
         Schema::create('tiposervicios', function (Blueprint $table) {
-            $table->char('id', 3)->comment('ID');
+            $table->id()->commet('id');
             $table->string('nombre', 45)->comment('Nombre');
             $table->decimal('precio', 45)->comment('Precio');
             $table->string('material_base', 45)->comment('Material_base');
