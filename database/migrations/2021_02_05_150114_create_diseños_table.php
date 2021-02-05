@@ -15,7 +15,7 @@ class CreateDiseñosTable extends Migration
     public function up()
     {
         Schema::create('diseños', function (Blueprint $table) {
-            $table->id()->commet('id');
+            $table->string('id', 5)->comment('ID');
             $table->string('color', 45)->comment('Color');
             $table->string('archivo', 45)->comment('Archivo');
             $table->timestamps();
