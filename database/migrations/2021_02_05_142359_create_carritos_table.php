@@ -18,7 +18,7 @@ class CreateCarritosTable extends Migration
             $table->integer('cantidad', 45)->comment('Cantidad');
             $table->decimal('total', 50)->comment('Total');
             $table->string('metodo_pago', 50)->comment('Metodo_pago');
-            $table->primary('id');
+            $table->timestamps();
         });
     }
 

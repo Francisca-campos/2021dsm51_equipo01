@@ -18,7 +18,7 @@ class CreateDiseñosTable extends Migration
             $table->char('id', 3)->comment('ID');
             $table->string('color', 45)->comment('Color');
             $table->string('archivo', 45)->comment('Archivo');
-            $table->primary('id');
+            $table->timestamps();
         });
     }
 

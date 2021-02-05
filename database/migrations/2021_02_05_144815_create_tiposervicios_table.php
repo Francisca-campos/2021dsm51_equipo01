@@ -18,7 +18,7 @@ class CreateTiposerviciosTable extends Migration
             $table->string('nombre', 45)->comment('Nombre');
             $table->decimal('precio', 45)->comment('Precio');
             $table->string('material_base', 45)->comment('Material_base');
-            $table->primary('id');
+            $table->timestamps();
         });
     }
 

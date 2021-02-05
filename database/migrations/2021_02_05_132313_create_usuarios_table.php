@@ -21,7 +21,7 @@ class CreateUsuariosTable extends Migration
             $table->integer('telefono', 50)->comment('Telefono');
             $table->string('correo_electronico', 50)->comment('Correo_electronico');
             $table->string('password', 10)->comment('Password');
-            $table->primary('id');
+            $table->timestamps();
         });
     }
 

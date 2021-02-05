@@ -16,7 +16,7 @@ class CreateServiciosTable extends Migration
         Schema::create('servicios', function (Blueprint $table) {
             $table->char('id', 3)->comment('ID');
             $table->integer('cantidad', 45)->comment('Cantidad');
-            $table->primary('id');
+            $table->timestamps();
         });
     }
 
