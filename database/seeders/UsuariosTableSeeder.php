@@ -4,7 +4,8 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
-
+use Carbon\Carbon;
+use App\Models\User;
 
 class UsuariosTableSeeder extends Seeder
 {
@@ -15,10 +16,13 @@ class UsuariosTableSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('usuarios')->insert([
-            ['id' => 'usu1', 'nombre' => 'Juan', 'primer_apellido' => 'Mendez', 'direccion' => 'Calle zaragoza', 'telefono' => '729359869', 'correo_electronico' => 'juan@gmail.com', 'password' => 'juan123']
-            , ['id' => 'usu2', 'nombre' => 'Monica', 'primer_apellido' => 'Torres', 'direccion' => 'Calle flores', 'telefono' => '729359868', 'correo_electronico' => 'monica@gmail.com', 'password' => 'monica123']
-            , ['id' => 'usu3', 'nombre' => 'Luis', 'primer_apellido' => 'Sanchez', 'direccion' => 'Calle dalia', 'telefono' => '729359862', 'correo_electronico' => 'luis@gmail.com', 'password' => 'luis123']
+        $now = Carbon::now('America/Mexico_City')->format('Y-m-d H:i:s');
+        User::insert([
+            'name' => 'Usuario inicial'
+            , 'email' => 'inicial@correo.com'
+            , 'password' => bcrypt('12345678')
+            , 'created_at' => $now
+            , 'updated_at' => $now
         ]);
     }
 }
