@@ -14,8 +14,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
+Route::middleware('auth:api')->get('/usuarios', function (Request $request) {
+    return $request->usuarios();
 });
 
 Route::post('/tokens/create', function (Request $request) {
@@ -28,6 +28,6 @@ Route::post('/tokens/create', function (Request $request) {
         throw new AuthenticationException();
     }
     return [
-        'token' => auth()->user()->createToken('test')->plainTextToken
+        'token' => auth()->usuarios()->createToken('test')->plainTextToken
     ];
 });
