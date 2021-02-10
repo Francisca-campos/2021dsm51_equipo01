@@ -38,7 +38,20 @@ class UsuariosController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'name' => 'required|string|max:25'
+            , 'primer_apellido' => 'required|string|max:25'
+            , 'segundo_apellido' => 'bail|nullable|string|max:25'
+            , 'fecha_nacimiento' => 'required|date_format:Y-m-d'
+            , 'sexo' => 'required|in:Femenino,Masculino,Prefiere no decirlo'
+            , 'perfil' => 'required|in:Administrador,Cliente,Cliente1'
+            , 'estatus' => 'required|in:Activo,Inactivo'
+            , 'email' => 'required|email|unique:users,email'
+            , 'password' => 'required|min:8'
+            ]);
+            $request->merge(['password' => bcrypt($request->password)]);
+            $usuario = User::create($request->all());
+            return new UserResource($usuario);
     }
 
     /**

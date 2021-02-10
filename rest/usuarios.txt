@@ -3,3 +3,21 @@ GET http://127.0.0.1:8000/api/usuarios HTTP/1.1
 Content-Type: application/json
 Accept: application/json
 Authorization: Bearer 6|N7dsiU12fFTVY6PnSFuXpX08PL3Y3rwnZ70JoUZG
+
+## Crear usuario
+POST http://127.0.0.1:8000/api/usuarios HTTP/1.1
+Content-Type: application/json
+Accept: application/json
+Authorization: Bearer 6|N7dsiU12fFTVY6PnSFuXpX08PL3Y3rwnZ70JoUZG
+
+{
+"name":"Raul Roberto"
+, "primer_apellido":"Juarez"
+, "segundo_apellido":"Garcia"
+, "fecha_nacimiento":"1806-03-21"
+, "sexo":"Masculino"
+, "perfil":"Cliente"
+, "estatus":"Activo"
+, "email":"raul.roberto@correo.com"
+, "password":"123456789"
+}
