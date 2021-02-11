@@ -15,13 +15,16 @@ class CreateDiseñosTable extends Migration
     public function up()
     {
         Schema::create('diseños', function (Blueprint $table) {
-            $table->string('id', 10)->comment('ID');
-            $table->string('color', 45)->comment('Color');
-            $table->string('archivo', 45)->comment('Archivo');
+            $table->id()->comment('ID');
+            $table->string('nombre', 25)->comment('Nombre');
+            $table->enum('color', ['Verde', 'Rojo', 'Azul', 'Rosa', 'Morado', 'Gris', 'Negro', 'Cafe', 'Amarillo', 'Naranja'])->comment('Color');
+            $table->string('archivo', 255)->comment('Archivo');
+            $table->enum('estatus', ['Activo', 'Inactivo'])->comment('Estatus');
             $table->timestamps();
         });
     }
 
+ 
     /**
      * Reverse the migrations.
      *

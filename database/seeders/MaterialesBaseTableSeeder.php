@@ -4,6 +4,8 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
+use Carbon\Carbon;
+use App\Models\Material_base;
 
 
 class MaterialesBaseTableSeeder extends Seeder
@@ -13,12 +15,5 @@ class MaterialesBaseTableSeeder extends Seeder
      *
      * @return void
      */
-    public function run()
-    {
-        DB::table('materialesbase')->insert([
-            ['id' => 'mate1', 'nombre' => 'papelbond', 'precio' => '105.9']
-            , ['id' => 'mate2', 'nombre' => 'tinta','precio' => '205.9' ]
-            
-        ]);
-    }
+    
 }

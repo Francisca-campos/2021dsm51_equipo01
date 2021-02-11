@@ -1,0 +1,5 @@
+## Obtener diseños
+GET http://127.0.0.1:8000/api/diseños HTTP/1.1
+Content-Type: application/json
+Accept: application/json
+Authorization: Bearer 6|N7dsiU12fFTVY6PnSFuXpX08PL3Y3rwnZ70JoUZG

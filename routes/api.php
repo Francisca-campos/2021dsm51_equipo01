@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Auth\AuthenticationException;
 use App\Http\Controllers\Api\UsuariosController;
+use App\Http\Controllers\Api\DiseñosController;
 
 
 
@@ -20,6 +21,7 @@ use App\Http\Controllers\Api\UsuariosController;
 
 Route::middleware('auth:sanctum')->group(function () {
     Route::apiResource('usuarios', UsuariosController::class)->except(['create', 'edit']);
+    Route::apiResource('diseños', DiseñosController::class)->except(['create', 'edit']);
 
 });
 Route::middleware('auth:api')->get('/user', function (Request $request) {
