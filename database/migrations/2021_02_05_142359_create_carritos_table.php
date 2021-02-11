@@ -14,6 +14,15 @@ class CreateCarritosTable extends Migration
     public function up()
     {
         Schema::create('carritos', function (Blueprint $table) {
+            $table->id()->comment('ID');
+            $table->integer('cantidad', 25)->comment('Cantidad');
+            $table->decimal('total', 25)->comment('Total');
+            $table->string('segundo_apellido', 25)->nullable()->comment('Segundo apellido');
+            $table->enum('sexo', ['Femenino', 'Masculino', 'Prefiere no decirlo'])->comment('Sexo');
+            $table->rememberToken();
+            $table->timestamps();
+            });
+        Schema::create('carritos', function (Blueprint $table) {
             $table->string('id', 5)->comment('ID');
             $table->integer('cantidad', 45)->comment('Cantidad');
             $table->decimal('total', 50)->comment('Total');
